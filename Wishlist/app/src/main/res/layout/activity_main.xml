@@ -15,13 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/submitBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/nameField"
@@ -33,6 +26,18 @@
         android:textSize="15sp"
         android:textColorHighlight="@color/black"
         app:layout_constraintBottom_toTopOf="@id/urlField"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/urlField"
+        android:layout_width="284dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:hint="Ex: https://example.example/my-item-url"
+        android:inputType="textUri"
+        android:textSize="15sp"
+        android:textColorHighlight="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -48,17 +53,13 @@
         app:layout_constraintBottom_toTopOf="@id/submitBtn"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <EditText
-        android:id="@+id/urlField"
-        android:layout_width="284dp"
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxLines="1"
-        android:hint="Ex: https://example.example/my-item-url"
-        android:inputType="textUri"
-        android:textSize="15sp"
-        android:textColorHighlight="@color/black"
+        android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

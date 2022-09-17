@@ -12,16 +12,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sample Wish Item"
-        android:textSize="15sp"
+        android:textSize="20sp"
+        android:padding="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/priceTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.00"
+        android:textSize="15sp"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/urlTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="https://example.example/my-item-url"
-        android:textSize="7sp"
+        android:textSize="10sp"
+        android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/priceTv" />
 </androidx.constraintlayout.widget.ConstraintLayout>
