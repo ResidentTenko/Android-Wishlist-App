@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         // Lookup/get the RecyclerView in activity layout
         val wishlistRV = findViewById<RecyclerView>(R.id.wishRv)
         // Create adapter passing in the list of emails
-        val adapter = WishlistAdapter(aWishlist)
+        val adapter = WishlistAdapter(aWishlist,)
         // Attach the adapter to the RecyclerView to populate items
         // basically pass your (class) adapter to the adapter property of RecyclerView
         wishlistRV.adapter = adapter
@@ -77,6 +77,12 @@ class MainActivity : AppCompatActivity() {
             // Notify the adapter there's a new wishlist so the RecyclerView layout is updated
             adapter.notifyDataSetChanged()
         }
-
+        // call the function created in WishlistAdapter
+        adapter.setOnItemClickListener(object: WishlistAdapter.OnItemClickListener{
+            override fun onItemClick(itemView: View?, position: Int) {
+                aWishlist.removeAt(position)
+                adapter.notifyDataSetChanged()
+            }
+        })
     }
 }
