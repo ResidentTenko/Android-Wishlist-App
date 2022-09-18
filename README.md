@@ -30,6 +30,7 @@ Here's a walkthrough of implemented user stories:
 https://user-images.githubusercontent.com/109637465/190928185-37715dac-38fe-4586-a18a-03a668947844.mp4
 
 Video created with NVIDIA GeForce Experience
+
 Video compressed with FreeConvert video compressor
 
 ## Notes
