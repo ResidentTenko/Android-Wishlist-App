@@ -53,7 +53,10 @@ class MainActivity : AppCompatActivity() {
         }
         /************************ END HELPER FUNCTIONS ********************/
 
-
+        /*
+        create a new wishlist and add it to a list
+        update the recycler view as the list grows and is fed to the holder
+         */
         submitButton.setOnClickListener {
             // hide the keyboard on submit
             it.hideKeyboard()
@@ -73,7 +76,7 @@ class MainActivity : AppCompatActivity() {
             aWishlist.add(secondWishlist)
             // Notify the adapter there's a new wishlist so the RecyclerView layout is updated
             adapter.notifyDataSetChanged()
-
         }
+
     }
 }

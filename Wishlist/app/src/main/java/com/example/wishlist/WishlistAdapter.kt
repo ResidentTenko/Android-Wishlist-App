@@ -36,7 +36,7 @@ class WishlistAdapter (private val myWishList: List<Wishlist>)
         val inflater = LayoutInflater.from(context)
         // inflate the custom layout
         // connect it to the wishlist_item xml
-        val contactView = inflater.inflate(R.layout.wishlist_item, parent, false)
+        val contactView = inflater.inflate(R.layout.wishlist_item_row, parent, false)
         return ViewHolder(contactView)
     }
 
@@ -54,6 +54,5 @@ class WishlistAdapter (private val myWishList: List<Wishlist>)
     override fun getItemCount(): Int {
         return myWishList.size
     }
-
 
 }
