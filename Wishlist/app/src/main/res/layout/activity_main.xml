@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -15,40 +16,45 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <EditText
         android:id="@+id/nameField"
-        android:layout_width="142dp"
+        android:layout_width="152dp"
         android:layout_height="wrap_content"
         android:maxLines="1"
         android:hint="Item Name"
         android:inputType="text"
-        android:textSize="15sp"
-        android:textColorHighlight="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/milkshake"
         app:layout_constraintBottom_toTopOf="@id/urlField"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/urlField"
-        android:layout_width="284dp"
+        android:layout_width="304dp"
         android:layout_height="wrap_content"
         android:maxLines="1"
         android:hint="Ex: https://example.example/my-item-url"
+        android:textStyle="bold"
         android:inputType="textUri"
-        android:textSize="15sp"
+        android:textSize="16sp"
+        android:fontFamily="@font/milkshake"
         android:textColorHighlight="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/priceField"
-        android:layout_width="71dp"
+        android:layout_width="76dp"
         android:layout_height="wrap_content"
         android:maxLines="1"
         android:hint="Ex: 9.99"
         android:inputType="numberDecimal"
         android:textAlignment="textStart"
-        android:textSize="15sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/milkshake"
+        android:imeOptions="actionDone"
         android:textColorHighlight="@color/black"
         app:layout_constraintBottom_toTopOf="@id/submitBtn"
         app:layout_constraintEnd_toEndOf="parent" />

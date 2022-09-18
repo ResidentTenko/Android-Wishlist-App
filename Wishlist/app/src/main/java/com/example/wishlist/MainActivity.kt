@@ -1,21 +1,21 @@
 package com.example.wishlist
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
-    //create a list to store the list of wishlists
+    //create an empty Mutable list to store the wishlists
     // let's make this a MutableList instead such as
     // Huzzah!! a list of wishlist objects
     var aWishlist = mutableListOf<Wishlist>()
-    //var secondWishlist = Wishlist(" ", " ", " ")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,18 +45,26 @@ class MainActivity : AppCompatActivity() {
         val submitButton = findViewById<Button>(R.id.submitBtn)
         /****************** END VARIABLE DECLARATIONS ********************/
 
-        submitButton.setOnClickListener {
-            // grab values from Edit Text fields and store in a created wishlist object
+        /************************* HELPER FUNCTIONS *************************/
+        // hide keyboard on enter
+        fun View.hideKeyboard() {
+            val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(windowToken, 0)
+        }
+        /************************ END HELPER FUNCTIONS ********************/
 
-            var secondWishlist = Wishlist(
+
+        submitButton.setOnClickListener {
+            // hide the keyboard on submit
+            it.hideKeyboard()
+
+            // grab values from Edit Text fields and store in a created wishlist object
+            val secondWishlist = Wishlist(
                 editName.text.toString(),
                 editPrice.text.toString(),
                 editUrl.text.toString())
-            /*secondWishlist.itemName = editName.text.toString()
-            secondWishlist.itemPrice = editPrice.text.toString()
-            secondWishlist.itemUrl = editUrl.text.toString()
-            */
 
+            // clear the values in the text field on enter
             editName.text.clear()
             editPrice.text.clear()
             editUrl.text.clear()
@@ -66,7 +74,6 @@ class MainActivity : AppCompatActivity() {
             // Notify the adapter there's a new wishlist so the RecyclerView layout is updated
             adapter.notifyDataSetChanged()
 
-            Log.d("Hello", "The wish list size: ${aWishlist.size}")
         }
     }
 }
