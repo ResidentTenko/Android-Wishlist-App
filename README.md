@@ -2,7 +2,7 @@
 
 Submitted by: **Fidel Ojimba**
 
-**Wishlist** is a wishlist app that helps the user keep track of what they want to buy.
+**Wishlist** is an Android mobile application designed to assist users in keeping track of items they wish to purchase.
 
 Time spent: **15** hours spent in total
 
